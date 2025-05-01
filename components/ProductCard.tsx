@@ -2,8 +2,8 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import { Image } from "expo-image";
 
-import { Product } from "@/utils/api";
 import { COLORS } from "@/utils/colors";
+import { Product } from "@/types";
 
 interface ProductCardProps {
   product: Product;
@@ -19,8 +19,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
     >
       <Image source={{ uri: product.image }} style={styles.image} />
       <View style={styles.productInfo}>
-        <Text style={styles.productTitle}>{product.title}</Text>
-        <Text style={styles.productPrice}>{product.price}</Text>
+        <Text style={styles.productTitle} numberOfLines={2}>
+          {product.title}
+        </Text>
+        <Text style={styles.productPrice}>${product.price}</Text>
       </View>
     </Pressable>
   );

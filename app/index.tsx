@@ -12,8 +12,9 @@ import { useQuery } from "@tanstack/react-query";
 import { FlashList } from "@shopify/flash-list";
 import { useHeaderHeight } from "@react-navigation/elements";
 
-import { getCategories, getProducts, Product } from "@/utils/api";
+import { getCategories, getProducts } from "@/utils/api";
 import { COLORS } from "@/utils/colors";
+import { Product } from "@/types";
 import ProductCard from "@/components/ProductCard";
 import { ProductShimmerGrid } from "@/components/ProductListShimmer";
 

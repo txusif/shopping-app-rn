@@ -1,26 +1,24 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Link } from "expo-router";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
 import useCartStore from "@/store/cartStore";
 import { COLORS } from "@/utils/colors";
-import Ionicons from "@expo/vector-icons/Ionicons";
 
 const CartButton = () => {
   const { count } = useCartStore();
 
   return (
-    <TouchableOpacity>
-      {count > 0 && (
-        <View style={styles.countContainer}>
-          <Text style={styles.countText}>{count}</Text>
-        </View>
-      )}
-      <Ionicons
-        name="cart"
-        size={28}
-        // color={COLORS.primary}
-        // style={{ marginRight: 20 }}
-      />
-    </TouchableOpacity>
+    <Link href={"/cart"} asChild>
+      <TouchableOpacity>
+        {count > 0 && (
+          <View style={styles.countContainer}>
+            <Text style={styles.countText}>{count}</Text>
+          </View>
+        )}
+        <Ionicons name="cart" size={28} />
+      </TouchableOpacity>
+    </Link>
   );
 };
 

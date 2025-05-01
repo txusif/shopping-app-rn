@@ -130,10 +130,6 @@ const styles = StyleSheet.create({
     boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.1)",
     height: 60,
     zIndex: 1,
-    // flexDirection: "row",
-    // justifyContent: "space-between",
-    // padding: 16,
-    // backgroundColor: "#f8f8f8",
   },
   categoryScrollView: {
     paddingHorizontal: 10,
